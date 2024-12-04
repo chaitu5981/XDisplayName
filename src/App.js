@@ -3,10 +3,10 @@ import React, { useState } from "react";
 const App = () => {
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
-  const [show, setShow] = useState(false);
+  const [fullName, setFullName] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    setShow(true);
+    setFullName(`${fName} ${lName}`);
   };
   return (
     <div>
@@ -33,11 +33,7 @@ const App = () => {
           />
         </div>
         <button type="submit">Submit</button>
-        {show && (
-          <p>
-            Full Name : {fName} {lName}
-          </p>
-        )}
+        {fullName && <p>Full Name : {fullName}</p>}
       </form>
     </div>
   );
