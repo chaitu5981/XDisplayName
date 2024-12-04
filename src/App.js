@@ -23,7 +23,7 @@ const App = () => {
           />
         </div>
         <div>
-          <label for="lName">First Name:</label>
+          <label for="lName">Last Name:</label>
           <input
             type="text"
             required
