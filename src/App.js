@@ -33,12 +33,12 @@ const App = () => {
           />
         </div>
         <button type="submit">Submit</button>
+        {show && (
+          <p>
+            Full Name : {fName} {lName}
+          </p>
+        )}
       </form>
-      {show && (
-        <p>
-          Full Name : {fName} {lName}
-        </p>
-      )}
     </div>
   );
 };
