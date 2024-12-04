@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+const App = () => {
+  const [fName, setFName] = useState("");
+  const [lName, setLName] = useState("");
+  const [show, setShow] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShow(true);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div>
+      <h1>Full Name Display</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label for="fName">First Name:</label>
+          <input
+            required
+            type="text"
+            id="fName"
+            value={fName}
+            onChange={(e) => setFName(e.target.value)}
+          />
+        </div>
+        <div>
+          <label for="lName">First Name:</label>
+          <input
+            type="text"
+            required
+            value={lName}
+            id="lName"
+            onChange={(e) => setLName(e.target.value)}
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      {show && (
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Full Name : {fName} {lName}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      )}
     </div>
   );
-}
+};
 
 export default App;
